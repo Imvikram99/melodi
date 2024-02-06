@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Melodi",
-    "slug": "Melodi",
+    "slug": "melodi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "dev.apipulse.melodi"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3ead61b3-bd44-4e55-afd3-5a2343a3813c"
+      }
+    },
+    "owner": "panwarvikram003a"
   }
 }

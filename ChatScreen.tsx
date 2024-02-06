@@ -10,14 +10,19 @@ const ChatScreen = () => {
   const [conversation, setConversation] = useState([]); // This will track the entire conversation history for the API payload
   const [isTyping, setIsTyping] = useState(false);
   const [messageNo, setMessageNo] = useState(1);
+  const [canSend, setCanSend] = useState(true);
 
   useEffect(() => {
     // Initial message setup if necessary
   }, []);
 
   const onSend = (newMessages = []) => {
+   // if (!canSend) return; need to find another way since doing this erases user message
     setIsTyping(true); // Show typing indicator
-
+    setCanSend(false);
+    setTimeout(() => {
+        setCanSend(true);
+      }, 60000);
     const userMessage = {
       role: "user",
       content: newMessages[0].text

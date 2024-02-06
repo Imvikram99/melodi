@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 64,
+            "activePatchIndex": 70,
             "patches": [
                 {
                     "date": 1707219133525,
@@ -264,6 +264,30 @@
                 {
                     "date": 1707227957694,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n       emailId: \"fg\",\n       messageNo: newMessageNo\n     };\n \n-    fetch('http://ec2-3-109-211-75.ap-south-1.compute.amazonaws.com:8085    /api/v1/chat/', {\n+    fetch('http://ec2-3-109-211-75.ap-south-1.compute.amazonaws.com:8085/api/v1/chat/', {\n       method: 'POST',\n       headers: {\n         'Content-Type': 'application/json',\n       },\n"
+                },
+                {
+                    "date": 1707234365769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   const [messages, setMessages] = useState([]);\n   const [conversation, setConversation] = useState([]); // This will track the entire conversation history for the API payload\n   const [isTyping, setIsTyping] = useState(false);\n   const [messageNo, setMessageNo] = useState(1);\n+  const [canSend, setCanSend] = useState(true);\n \n   useEffect(() => {\n     // Initial message setup if necessary\n   }, []);\n"
+                },
+                {
+                    "date": 1707234401237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n     // Initial message setup if necessary\n   }, []);\n \n   const onSend = (newMessages = []) => {\n+    if (!canSend) return;\n     setIsTyping(true); // Show typing indicator\n \n     const userMessage = {\n       role: \"user\",\n"
+                },
+                {
+                    "date": 1707234540982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,11 @@\n \n   const onSend = (newMessages = []) => {\n     if (!canSend) return;\n     setIsTyping(true); // Show typing indicator\n-\n+    setTimeout(() => {\n+        setCanSend(true);\n+      }, 60000);\n     const userMessage = {\n       role: \"user\",\n       content: newMessages[0].text\n     };\n"
+                },
+                {
+                    "date": 1707234553483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n \n   const onSend = (newMessages = []) => {\n     if (!canSend) return;\n     setIsTyping(true); // Show typing indicator\n+    setCanSend(false);\n     setTimeout(() => {\n         setCanSend(true);\n       }, 60000);\n     const userMessage = {\n"
+                },
+                {
+                    "date": 1707243265509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     // Initial message setup if necessary\n   }, []);\n \n   const onSend = (newMessages = []) => {\n-    if (!canSend) return;\n+   // if (!canSend) return;\n     setIsTyping(true); // Show typing indicator\n     setCanSend(false);\n     setTimeout(() => {\n         setCanSend(true);\n"
+                },
+                {
+                    "date": 1707243279421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     // Initial message setup if necessary\n   }, []);\n \n   const onSend = (newMessages = []) => {\n-   // if (!canSend) return; need to find another way since doing this e\n+   // if (!canSend) return; need to find another way since doing this er\n     setIsTyping(true); // Show typing indicator\n     setCanSend(false);\n     setTimeout(() => {\n         setCanSend(true);\n"
                 }
             ],
             "date": 1707219133525,
