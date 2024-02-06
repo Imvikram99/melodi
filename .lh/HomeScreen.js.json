@@ -1,0 +1,18 @@
+{
+    "sourceFile": "HomeScreen.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1707219379117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1707219379117,
+            "name": "Commit-0",
+            "content": "// HomeScreen.js\nimport React from 'react';\nimport { View, Text, Button, StyleSheet } from 'react-native';\nimport { StatusBar } from 'expo-status-bar';\n\nconst HomeScreen = ({ navigation }) => {\n  return (\n    <View style={styles.container}>\n      <Text>Open up App.js to start working on your app!</Text>\n      <Button\n        title=\"Go to Chat\"\n        onPress={() => navigation.navigate('Chat')}\n      />\n      <StatusBar style=\"auto\" />\n    </View>\n  );\n};\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    backgroundColor: '#fff',\n    alignItems: 'center',\n    justifyContent: 'center',\n  },\n});\n\nexport default HomeScreen;\n"
+        }
+    ]
+}

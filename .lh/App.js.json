@@ -1,0 +1,42 @@
+{
+    "sourceFile": "App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1707219269294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1707219390877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import { NavigationContainer } from '@react-navigation/native';\n import { createNativeStackNavigator } from '@react-navigation/native-stack';\n import ChatScreen from './ChatScreen'; // Make sure the path matches where you save your ChatScreen\n \n+\n const Stack = createNativeStackNavigator();\n \n function HomeScreen() {\n   return (\n"
+                },
+                {
+                    "date": 1707219402525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n import { StyleSheet, View, Text } from 'react-native';\n import { NavigationContainer } from '@react-navigation/native';\n import { createNativeStackNavigator } from '@react-navigation/native-stack';\n import ChatScreen from './ChatScreen'; // Make sure the path matches where you save your ChatScreen\n+// Import statement at the top of App.js\n+import HomeScreen from './HomeScreen'; \n \n \n const Stack = createNativeStackNavigator();\n \n"
+                },
+                {
+                    "date": 1707219411019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,9 @@\n import { StatusBar } from 'expo-status-bar';\n import { StyleSheet, View, Text } from 'react-native';\n import { NavigationContainer } from '@react-navigation/native';\n import { createNativeStackNavigator } from '@react-navigation/native-stack';\n-import ChatScreen from './ChatScreen'; // Make sure the path matches where you save your ChatScreen\n-// Import statement at the top of App.js\n+import ChatScreen from './ChatScreen'; \n import HomeScreen from './HomeScreen'; \n \n \n const Stack = createNativeStackNavigator();\n"
+                },
+                {
+                    "date": 1707219455482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { StatusBar } from 'expo-status-bar';\n import { StyleSheet, View, Text } from 'react-native';\n import { NavigationContainer } from '@react-navigation/native';\n import { createNativeStackNavigator } from '@react-navigation/native-stack';\n-import ChatScreen from './ChatScreen'; \n+import ChatScreen from './ChatScreen';4\n import HomeScreen from './HomeScreen'; \n \n \n const Stack = createNativeStackNavigator();\n"
+                },
+                {
+                    "date": 1707219471779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { StatusBar } from 'expo-status-bar';\n import { StyleSheet, View, Text } from 'react-native';\n import { NavigationContainer } from '@react-navigation/native';\n import { createNativeStackNavigator } from '@react-navigation/native-stack';\n-import ChatScreen from './ChatScreen';4\n+import ChatScreen from './ChatScreen';\n import HomeScreen from './HomeScreen'; \n \n \n const Stack = createNativeStackNavigator();\n"
+                },
+                {
+                    "date": 1707219508497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,16 +8,8 @@\n \n \n const Stack = createNativeStackNavigator();\n \n-function HomeScreen() {\n-  return (\n-    <View style={styles.container}>\n-      <Text>Open up App.js to start working on your app!</Text>\n-      <StatusBar style=\"auto\" />\n-    </View>\n-  );\n-}\n \n export default function App() {\n   return (\n     <NavigationContainer>\n"
+                }
+            ],
+            "date": 1707219269294,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { StatusBar } from 'expo-status-bar';\nimport { StyleSheet, View, Text } from 'react-native';\nimport { NavigationContainer } from '@react-navigation/native';\nimport { createNativeStackNavigator } from '@react-navigation/native-stack';\nimport ChatScreen from './ChatScreen'; // Make sure the path matches where you save your ChatScreen\n\nconst Stack = createNativeStackNavigator();\n\nfunction HomeScreen() {\n  return (\n    <View style={styles.container}>\n      <Text>Open up App.js to start working on your app!</Text>\n      <StatusBar style=\"auto\" />\n    </View>\n  );\n}\n\nexport default function App() {\n  return (\n    <NavigationContainer>\n      <Stack.Navigator initialRouteName=\"Home\">\n        <Stack.Screen name=\"Home\" component={HomeScreen} />\n        <Stack.Screen name=\"Chat\" component={ChatScreen} options={{ title: 'Chat' }} />\n      </Stack.Navigator>\n    </NavigationContainer>\n  );\n}\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    backgroundColor: '#fff',\n    alignItems: 'center',\n    justifyContent: 'center',\n  },\n});\n"
+        }
+    ]
+}
