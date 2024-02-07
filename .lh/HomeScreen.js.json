@@ -3,11 +3,111 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 25,
             "patches": [
                 {
                     "date": 1707219379117,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1707300009693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,16 @@\n       <Button\n         title=\"Go to Chat\"\n         onPress={() => navigation.navigate('Chat')}\n       />\n+      <Button\n+        title=\"Go to Chat\"\n+        onPress={() => navigation.navigate('Chat')}\n+      />\n+      <Button\n+        title=\"Go to Chat\"\n+        onPress={() => navigation.navigate('Chat')}\n+      />\n       <StatusBar style=\"auto\" />\n     </View>\n   );\n };\n"
+                },
+                {
+                    "date": 1707300015887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,17 +8,17 @@\n     <View style={styles.container}>\n       <Text>Open up App.js to start working on your app!</Text>\n       <Button\n         title=\"Go to Chat\"\n-        onPress={() => navigation.navigate('Chat')}\n+        onPress={() => navigation.navigate('Chat11')}\n       />\n       <Button\n         title=\"Go to Chat\"\n-        onPress={() => navigation.navigate('Chat')}\n+        onPress={() => navigation.navigate('Chat2')}\n       />\n       <Button\n         title=\"Go to Chat\"\n-        onPress={() => navigation.navigate('Chat')}\n+        onPress={() => navigation.navigate('Chat3')}\n       />\n       <StatusBar style=\"auto\" />\n     </View>\n   );\n"
+                },
+                {
+                    "date": 1707300024144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,13 +7,13 @@\n   return (\n     <View style={styles.container}>\n       <Text>Open up App.js to start working on your app!</Text>\n       <Button\n-        title=\"Go to Chat\"\n+        title=\"Go to Chat1\"\n         onPress={() => navigation.navigate('Chat11')}\n       />\n       <Button\n-        title=\"Go to Chat\"\n+        title=\"Go to Chat2\"\n         onPress={() => navigation.navigate('Chat2')}\n       />\n       <Button\n         title=\"Go to Chat\"\n"
+                },
+                {
+                    "date": 1707300094698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,16 +8,16 @@\n     <View style={styles.container}>\n       <Text>Open up App.js to start working on your app!</Text>\n       <Button\n         title=\"Go to Chat1\"\n-        onPress={() => navigation.navigate('Chat11')}\n+        onPress={() => navigation.navigate('Chat1')}\n       />\n       <Button\n         title=\"Go to Chat2\"\n         onPress={() => navigation.navigate('Chat2')}\n       />\n       <Button\n-        title=\"Go to Chat\"\n+        title=\"Go to Chat3\"\n         onPress={() => navigation.navigate('Chat3')}\n       />\n       <StatusBar style=\"auto\" />\n     </View>\n"
+                },
+                {
+                    "date": 1707300400226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,37 @@\n-// HomeScreen.js\n import React from 'react';\n-import { View, Text, Button, StyleSheet } from 'react-native';\n+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';\n import { StatusBar } from 'expo-status-bar';\n \n const HomeScreen = ({ navigation }) => {\n   return (\n     <View style={styles.container}>\n       <Text>Open up App.js to start working on your app!</Text>\n-      <Button\n-        title=\"Go to Chat1\"\n+      \n+      {/* TouchableOpacity for Chat 1 with pink color */}\n+      <TouchableOpacity\n+        style={[styles.button, styles.buttonPink]}\n         onPress={() => navigation.navigate('Chat1')}\n-      />\n-      <Button\n-        title=\"Go to Chat2\"\n+      >\n+        <Text style={styles.buttonText}>Go to Chat1</Text>\n+      </TouchableOpacity>\n+      \n+      {/* TouchableOpacity for Chat 2 with blue color */}\n+      <TouchableOpacity\n+        style={[styles.button, styles.buttonBlue]}\n         onPress={() => navigation.navigate('Chat2')}\n-      />\n-      <Button\n-        title=\"Go to Chat3\"\n+      >\n+        <Text style={styles.buttonText}>Go to Chat2</Text>\n+      </TouchableOpacity>\n+      \n+      {/* TouchableOpacity for Chat 3 with orange color */}\n+      <TouchableOpacity\n+        style={[styles.button, styles.buttonOrange]}\n         onPress={() => navigation.navigate('Chat3')}\n-      />\n+      >\n+        <Text style={styles.buttonText}>Go to Chat3</Text>\n+      </TouchableOpacity>\n+      \n       <StatusBar style=\"auto\" />\n     </View>\n   );\n };\n@@ -30,7 +42,22 @@\n     backgroundColor: '#fff',\n     alignItems: 'center',\n     justifyContent: 'center',\n   },\n-});\n-\n-export default HomeScreen;\n+  button: {\n+    marginTop: 10, // Adds space between buttons\n+    paddingVertical: 10,\n+    paddingHorizontal: 20,\n+    borderRadius: 5,\n+  },\n+  buttonText: {\n+    color: '#fff',\n+    textAlign: 'center',\n+  },\n+  buttonPink: {\n+    backgroundColor: 'pink',\n+  },\n+  buttonBlue: {\n+    backgroundColor: 'blue',\n+  },\n+  buttonOrange: {\n+    backgroundColor: 'orange',\n"
+                },
+                {
+                    "date": 1707300407066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,4 +60,5 @@\n     backgroundColor: 'blue',\n   },\n   buttonOrange: {\n     backgroundColor: 'orange',\n+  }\n"
+                },
+                {
+                    "date": 1707300413086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,5 +60,5 @@\n     backgroundColor: 'blue',\n   },\n   buttonOrange: {\n     backgroundColor: 'orange',\n-  }\n+  }}\n"
+                },
+                {
+                    "date": 1707300422664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,5 +60,6 @@\n     backgroundColor: 'blue',\n   },\n   buttonOrange: {\n     backgroundColor: 'orange',\n-  }}\n+  }\n+});\n"
+                },
+                {
+                    "date": 1707300465880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,6 +60,5 @@\n     backgroundColor: 'blue',\n   },\n   buttonOrange: {\n     backgroundColor: 'orange',\n-  }\n-});\n+  }}\n"
+                },
+                {
+                    "date": 1707300643365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+// HomeScreen.js\n import React from 'react';\n import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';\n import { StatusBar } from 'expo-status-bar';\n \n@@ -47,12 +48,14 @@\n     marginTop: 10, // Adds space between buttons\n     paddingVertical: 10,\n     paddingHorizontal: 20,\n     borderRadius: 5,\n+    alignItems: 'center', // Ensure text is centered within the button\n+    width: 200, // Optional: Adjust button width as needed\n   },\n   buttonText: {\n     color: '#fff',\n-    textAlign: 'center',\n+    fontSize: 16, // Optional: Adjust font size as needed\n   },\n   buttonPink: {\n     backgroundColor: 'pink',\n   },\n@@ -60,5 +63,8 @@\n     backgroundColor: 'blue',\n   },\n   buttonOrange: {\n     backgroundColor: 'orange',\n-  }}\n+  },\n+});\n+\n+export default HomeScreen;\n"
+                },
+                {
+                    "date": 1707300671643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       \n       {/* TouchableOpacity for Chat 1 with pink color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonPink]}\n-        onPress={() => navigation.navigate('Chat1')}\n+        onPress={() => navigation.navigate('Chat with Meloni')}\n       >\n         <Text style={styles.buttonText}>Go to Chat1</Text>\n       </TouchableOpacity>\n       \n"
+                },
+                {
+                    "date": 1707300679899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n       \n       {/* TouchableOpacity for Chat 2 with blue color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonBlue]}\n-        onPress={() => navigation.navigate('Chat2')}\n+        onPress={() => navigation.navigate('Chat with vicky')}\n       >\n         <Text style={styles.buttonText}>Go to Chat2</Text>\n       </TouchableOpacity>\n       \n"
+                },
+                {
+                    "date": 1707300684988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n       \n       {/* TouchableOpacity for Chat 2 with blue color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonBlue]}\n-        onPress={() => navigation.navigate('Chat with vicky')}\n+        onPress={() => navigation.navigate('Chat with icky')}\n       >\n         <Text style={styles.buttonText}>Go to Chat2</Text>\n       </TouchableOpacity>\n       \n"
+                },
+                {
+                    "date": 1707300694108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,17 +18,17 @@\n       \n       {/* TouchableOpacity for Chat 2 with blue color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonBlue]}\n-        onPress={() => navigation.navigate('Chat with icky')}\n+        onPress={() => navigation.navigate('Chat with Vicky Kaushal')}\n       >\n         <Text style={styles.buttonText}>Go to Chat2</Text>\n       </TouchableOpacity>\n       \n       {/* TouchableOpacity for Chat 3 with orange color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonOrange]}\n-        onPress={() => navigation.navigate('Chat3')}\n+        onPress={() => navigation.navigate('Chat')}\n       >\n         <Text style={styles.buttonText}>Go to Chat3</Text>\n       </TouchableOpacity>\n       \n"
+                },
+                {
+                    "date": 1707300700596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,17 +18,17 @@\n       \n       {/* TouchableOpacity for Chat 2 with blue color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonBlue]}\n-        onPress={() => navigation.navigate('Chat with Vicky Kaushal')}\n+        onPress={() => navigation.navigate('Chat2')}\n       >\n         <Text style={styles.buttonText}>Go to Chat2</Text>\n       </TouchableOpacity>\n       \n       {/* TouchableOpacity for Chat 3 with orange color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonOrange]}\n-        onPress={() => navigation.navigate('Chat')}\n+        onPress={() => navigation.navigate('Chat3')}\n       >\n         <Text style={styles.buttonText}>Go to Chat3</Text>\n       </TouchableOpacity>\n       \n"
+                },
+                {
+                    "date": 1707300766076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,14 @@\n \n const HomeScreen = ({ navigation }) => {\n   return (\n     <View style={styles.container}>\n-      <Text>Open up App.js to start working on your app!</Text>\n+      <Text>Chat!</Text>\n       \n       {/* TouchableOpacity for Chat 1 with pink color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonPink]}\n-        onPress={() => navigation.navigate('Chat with Meloni')}\n+        onPress={() => navigation.navigate('Chat1')}\n       >\n         <Text style={styles.buttonText}>Go to Chat1</Text>\n       </TouchableOpacity>\n       \n"
+                },
+                {
+                    "date": 1707300773223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n const HomeScreen = ({ navigation }) => {\n   return (\n     <View style={styles.container}>\n-      <Text>Chat!</Text>\n+      <Text>Enjoy with !</Text>\n       \n       {/* TouchableOpacity for Chat 1 with pink color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonPink]}\n"
+                },
+                {
+                    "date": 1707300781129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n const HomeScreen = ({ navigation }) => {\n   return (\n     <View style={styles.container}>\n-      <Text>Enjoy with !</Text>\n+      <Text>Enjoy with your favriout person!</Text>\n       \n       {/* TouchableOpacity for Chat 1 with pink color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonPink]}\n"
+                },
+                {
+                    "date": 1707300790922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n const HomeScreen = ({ navigation }) => {\n   return (\n     <View style={styles.container}>\n-      <Text>Enjoy with your favriout person!</Text>\n+      <Text>Enjoy with your fav person!</Text>\n       \n       {/* TouchableOpacity for Chat 1 with pink color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonPink]}\n"
+                },
+                {
+                    "date": 1707301094403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n       <TouchableOpacity\n         style={[styles.button, styles.buttonPink]}\n         onPress={() => navigation.navigate('Chat1')}\n       >\n-        <Text style={styles.buttonText}>Go to Chat1</Text>\n+        <Text style={styles.buttonText}></Text>\n       </TouchableOpacity>\n       \n       {/* TouchableOpacity for Chat 2 with blue color */}\n       <TouchableOpacity\n"
+                },
+                {
+                    "date": 1707301102571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,17 +12,17 @@\n       <TouchableOpacity\n         style={[styles.button, styles.buttonPink]}\n         onPress={() => navigation.navigate('Chat1')}\n       >\n-        <Text style={styles.buttonText}></Text>\n+        <Text style={styles.buttonText}>Meloni</Text>\n       </TouchableOpacity>\n       \n       {/* TouchableOpacity for Chat 2 with blue color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonBlue]}\n         onPress={() => navigation.navigate('Chat2')}\n       >\n-        <Text style={styles.buttonText}>Go to Chat2</Text>\n+        <Text style={styles.buttonText}></Text>\n       </TouchableOpacity>\n       \n       {/* TouchableOpacity for Chat 3 with orange color */}\n       <TouchableOpacity\n"
+                },
+                {
+                    "date": 1707301114209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,17 +20,17 @@\n       <TouchableOpacity\n         style={[styles.button, styles.buttonBlue]}\n         onPress={() => navigation.navigate('Chat2')}\n       >\n-        <Text style={styles.buttonText}></Text>\n+        <Text style={styles.buttonText}>Vicky Kaushal</Text>\n       </TouchableOpacity>\n       \n       {/* TouchableOpacity for Chat 3 with orange color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonOrange]}\n         onPress={() => navigation.navigate('Chat3')}\n       >\n-        <Text style={styles.buttonText}>Go to Chat3</Text>\n+        <Text style={styles.buttonText}>Bes</Text>\n       </TouchableOpacity>\n       \n       <StatusBar style=\"auto\" />\n     </View>\n"
+                },
+                {
+                    "date": 1707308542742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n       >\n         <Text style={styles.buttonText}>Meloni</Text>\n       </TouchableOpacity>\n       \n-      {/* TouchableOpacity for Chat 2 with blue color */}\n+      TouchableOpacity for Chat 2 with blue color\n       <TouchableOpacity\n         style={[styles.button, styles.buttonBlue]}\n         onPress={() => navigation.navigate('Chat2')}\n       >\n@@ -28,9 +28,9 @@\n       <TouchableOpacity\n         style={[styles.button, styles.buttonOrange]}\n         onPress={() => navigation.navigate('Chat3')}\n       >\n-        <Text style={styles.buttonText}>Bes</Text>\n+        <Text style={styles.buttonText}>Bestie</Text>\n       </TouchableOpacity>\n       \n       <StatusBar style=\"auto\" />\n     </View>\n"
+                },
+                {
+                    "date": 1707308562926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n       >\n         <Text style={styles.buttonText}>Meloni</Text>\n       </TouchableOpacity>\n       \n-      TouchableOpacity for Chat 2 with blue color\n       <TouchableOpacity\n         style={[styles.button, styles.buttonBlue]}\n         onPress={() => navigation.navigate('Chat2')}\n       >\n"
+                },
+                {
+                    "date": 1707308570732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,22 +15,21 @@\n       >\n         <Text style={styles.buttonText}>Meloni</Text>\n       </TouchableOpacity>\n       \n-      <TouchableOpacity\n+      {/* <TouchableOpacity\n         style={[styles.button, styles.buttonBlue]}\n         onPress={() => navigation.navigate('Chat2')}\n       >\n         <Text style={styles.buttonText}>Vicky Kaushal</Text>\n       </TouchableOpacity>\n       \n-      {/* TouchableOpacity for Chat 3 with orange color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonOrange]}\n         onPress={() => navigation.navigate('Chat3')}\n       >\n         <Text style={styles.buttonText}>Bestie</Text>\n-      </TouchableOpacity>\n+      </TouchableOpacity> */}\n       \n       <StatusBar style=\"auto\" />\n     </View>\n   );\n"
                 }
             ],
             "date": 1707219379117,

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
-import { Text } from 'react-native';
+import { View , Text, StyleSheet} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 //import meloniAvatar from './meloni.jpg'; // Adjust the path as necessary
 
 
 
-const ChatScreen = () => {
+const ChatScreen = ({ route }) => {
+  const { chatPersonId } = route.params;
+  console.log(chatPersonId);
   const [messages, setMessages] = useState([]);
   const [conversation, setConversation] = useState([]); // This will track the entire conversation history for the API payload
   const [isTyping, setIsTyping] = useState(false);
@@ -41,7 +44,9 @@ const ChatScreen = () => {
     const payload = {
       chatMessageList: updatedConversation,
       emailId: "fg",
-      messageNo: newMessageNo
+      messageNo: newMessageNo,
+      chatPersonId:chatPersonId,
+      userCurrentTime: new Date().toLocaleString()
     };
 
     fetch('http://ec2-3-109-211-75.ap-south-1.compute.amazonaws.com:8085/api/v1/chat/', {
@@ -65,7 +70,7 @@ const ChatScreen = () => {
         const apiResponse = data.choices[0].message;
         const assistantMessage = {
           role: "assistant",
-          content: apiResponse.content
+          content: apiResponse.content.trim()
         };
 
         // Include the assistant's response in the conversation history
@@ -93,7 +98,7 @@ const ChatScreen = () => {
       console.error('Error:', error);
       const errorAssistantMessage = {
         _id: Math.round(Math.random() * 1000000),
-        text: "I'm busy.",
+        text: "I'm busy. Bye",
         createdAt: new Date(),
         user: {
           _id: 2,
@@ -101,8 +106,8 @@ const ChatScreen = () => {
           avatar: 'https://placeimg.com/140/140/any',
         },
       };
-      const errorAssistantMessagePayload = {"role": "assistant", "content": "I'm busy."}
-      setConversation(current => [...current, errorAssistantMessagePayload]);
+      //const errorAssistantMessagePayload = {"role": "assistant", "content": "I'm busy."}
+      //setConversation(current => [...current, errorAssistantMessagePayload]);
       setMessages(previousMessages => GiftedChat.append(previousMessages, [errorAssistantMessage]));
     });
 
@@ -122,6 +127,7 @@ const ChatScreen = () => {
   };
   
   return (
+    <View style={styles.container}>
     <GiftedChat
       messages={messages}
       onSend={messages => onSend(messages)}
@@ -129,7 +135,17 @@ const ChatScreen = () => {
       isTyping={isTyping}
       renderFooter={renderFooter}
     />
+    <StatusBar style="auto" />
+    </View>
   );
 };
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#FFC0CB', // Set your desired background color here
+      // Other styling properties as needed
+    },
+    // Your existing styles (if any)
+  });
 
 export default ChatScreen;
