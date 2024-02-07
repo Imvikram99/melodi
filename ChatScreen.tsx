@@ -98,7 +98,7 @@ const ChatScreen = ({ route }) => {
       console.error('Error:', error);
       const errorAssistantMessage = {
         _id: Math.round(Math.random() * 1000000),
-        text: "I'm busy. Bye",
+        text: "I'm busy. Bye" + JSON.stringify(error),
         createdAt: new Date(),
         user: {
           _id: 2,
