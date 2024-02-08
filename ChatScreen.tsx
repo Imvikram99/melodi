@@ -41,12 +41,20 @@ const ChatScreen = ({ route }) => {
     // Determine the message number, resetting if necessary
     const newMessageNo = messageNo;
 
+    const isAfter10PMorBefore4AM = () => {
+        const now = new Date();
+        const hours = now.getHours();
+      
+        // Check if time is after 10 PM (22) or before 4 AM (4)
+        return hours >= 22 || hours < 4;
+      };
     const payload = {
       chatMessageList: updatedConversation,
       emailId: "fg",
       messageNo: newMessageNo,
       chatPersonId:chatPersonId,
-      userCurrentTime: new Date().toLocaleString()
+      userCurrentTime: new Date().toLocaleString(),
+      isNight: isAfter10PMorBefore4AM()
     };
 
     fetch('http://ec2-3-109-211-75.ap-south-1.compute.amazonaws.com:8085/api/v1/chat/', {
@@ -98,7 +106,7 @@ const ChatScreen = ({ route }) => {
       console.error('Error:', error);
       const errorAssistantMessage = {
         _id: Math.round(Math.random() * 1000000),
-        text: "I'm busy. Bye" + JSON.stringify(error),
+        text: "I'm busy. Bye",
         createdAt: new Date(),
         user: {
           _id: 2,
