@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 25,
+            "activePatchIndex": 27,
             "patches": [
                 {
                     "date": 1707219379117,
@@ -108,6 +108,14 @@
                 {
                     "date": 1707308570732,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,22 +15,21 @@\n       >\n         <Text style={styles.buttonText}>Meloni</Text>\n       </TouchableOpacity>\n       \n-      <TouchableOpacity\n+      {/* <TouchableOpacity\n         style={[styles.button, styles.buttonBlue]}\n         onPress={() => navigation.navigate('Chat2')}\n       >\n         <Text style={styles.buttonText}>Vicky Kaushal</Text>\n       </TouchableOpacity>\n       \n-      {/* TouchableOpacity for Chat 3 with orange color */}\n       <TouchableOpacity\n         style={[styles.button, styles.buttonOrange]}\n         onPress={() => navigation.navigate('Chat3')}\n       >\n         <Text style={styles.buttonText}>Bestie</Text>\n-      </TouchableOpacity>\n+      </TouchableOpacity> */}\n       \n       <StatusBar style=\"auto\" />\n     </View>\n   );\n"
+                },
+                {
+                    "date": 1707652704855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import React from 'react';\n import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';\n import { StatusBar } from 'expo-status-bar';\n \n+\n const HomeScreen = ({ navigation }) => {\n   return (\n     <View style={styles.container}>\n       <Text>Enjoy with your fav person!</Text>\n"
+                },
+                {
+                    "date": 1707652754244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n // HomeScreen.js\n import React from 'react';\n import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';\n import { StatusBar } from 'expo-status-bar';\n+import ShareOption from './ShareOption';\n \n-\n const HomeScreen = ({ navigation }) => {\n   return (\n     <View style={styles.container}>\n       <Text>Enjoy with your fav person!</Text>\n@@ -29,9 +29,9 @@\n         onPress={() => navigation.navigate('Chat3')}\n       >\n         <Text style={styles.buttonText}>Bestie</Text>\n       </TouchableOpacity> */}\n-      \n+      <ShareOption />\n       <StatusBar style=\"auto\" />\n     </View>\n   );\n };\n"
                 }
             ],
             "date": 1707219379117,

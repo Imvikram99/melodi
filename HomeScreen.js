@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import ShareOption from './ShareOption';
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -29,7 +30,7 @@ const HomeScreen = ({ navigation }) => {
       >
         <Text style={styles.buttonText}>Bestie</Text>
       </TouchableOpacity> */}
-      
+      <ShareOption />
       <StatusBar style="auto" />
     </View>
   );

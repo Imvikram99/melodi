@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 32,
+            "activePatchIndex": 33,
             "patches": [
                 {
                     "date": 1707219269294,
@@ -136,6 +136,10 @@
                 {
                     "date": 1707308523119,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n       <NavigationContainer>\n         <Stack.Navigator initialRouteName=\"Home\">\n           <Stack.Screen name=\"Home\" component={HomeScreen} />\n           <Stack.Screen name=\"Chat1\" component={ChatScreen} options={{ title: 'Chat with Meloni' }} initialParams={{ chatPersonId: 'meloni' }} />\n-          {/* <Stack.Screen name=\"Chat2\" component={ChatScreen} options={{ title: 'Chat with Vicky Kaushal' }} initialParams={{ chatPersonId: 'vickey' }} />\n-          <Stack.Screen name=\"Chat3\" component={ChatScreen} options={{ title: 'Chat with Bestie' }} initialParams={{ chatPersonId: 'bestie' }}/> */}\n+          <Stack.Screen name=\"Chat2\" component={ChatScreen} options={{ title: 'Chat with Vicky Kaushal' }} initialParams={{ chatPersonId: 'vickey' }} />\n+          <Stack.Screen name=\"Chat3\" component={ChatScreen} options={{ title: 'Chat with Bestie' }} initialParams={{ chatPersonId: 'bestie' }}/>\n         </Stack.Navigator>\n       </NavigationContainer>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1707825951555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n import { NavigationContainer } from '@react-navigation/native';\n import { createNativeStackNavigator } from '@react-navigation/native-stack';\n import ChatScreen from './ChatScreen';\n import HomeScreen from './HomeScreen'; \n-import ShareButton from './ShareButton';\n import { SafeAreaView } from 'react-native';\n \n const Stack = createNativeStackNavigator();\n \n"
                 }
             ],
             "date": 1707219269294,
